@@ -3,6 +3,7 @@ package Programmers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class level1_230322 {
 
@@ -97,6 +98,71 @@ public class level1_230322 {
 		
 		Arrays.sort(answer4);
 		System.out.println(Arrays.toString(answer4));
-	}
+		
+		
+		// 5. 가운데 글자 가져오기
+		
+		String s = "abcdef";
+		String answer5 = "";
+		int number5 = 0;
+
+		String[] sArr = s.split("");
+		number5 = s.length() / 2;
+		
+		if(s.length() % 2 == 0) {
+			answer5 = sArr[number5 - 1] + sArr[number5];
+		}else {
+			answer5 = sArr[number5];
+		}
+		
+		System.out.println("5번 정답 : " + answer5);
+		
+		
+		
+		// 6. 내적
+		
+		int[] a = {1,2,3,4};
+		int[] b = {-3,-1,0,2};
+		long answer6 = 0;
+		
+		for(int i = 0; i < a.length; i++) {
+			answer6 += a[i] * b[i];
+		}
+		
+		System.out.println("6번 정답 : " + answer6);
+		
+		
+		
+		// 7. 문자열 내림차순으로 배치하기
+		
+		String str = "Zbcdefg";
+		String answer7 = "";
+		String[] strArr = str.split("");
+		
+		Arrays.sort(strArr);
+		
+		for(int i = strArr.length - 1; i >= 0; i--) {
+			answer7 += strArr[i];
+		}
+		
+		System.out.println("7번 정답 : " + answer7);
+		
+		
+		// 8. 직사각형 별찍기
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int a8 = sc.nextInt();
+		int b8 = sc.nextInt();
+		String sub_answer8 = "";
+		for(int i = 0; i < a8; i++) {
+			sub_answer8 += "*";
+			
+		}
+		
+		for(int j = 0; j < b8; j++) {
+			System.out.println(sub_answer8);
+		}
+ 	}
 
 }
