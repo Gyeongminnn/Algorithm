@@ -45,17 +45,6 @@ public class level1_5 {
 		System.out.println(answer);
 		
 		
-		// 3. 최대공약수와 최소공배수
-		
-		int n = 3, m = 12;
-		int[] answer3 = new int[2];
-		int[] sub_answer3 = {};
-		
-		for(int i = 1; i <= n; i++) {
-			if(n % i == 0) {
-				
-			}
-		}
  		
 		
 		
