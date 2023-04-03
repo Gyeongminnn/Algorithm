@@ -39,9 +39,6 @@ class Solution {
 		answer[0] = greatest(n, m);
 		answer[1] = n * m / answer[0];
  		
-		
-		
-		
 		return answer;
 	}
 	
