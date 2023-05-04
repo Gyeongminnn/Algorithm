@@ -1,5 +1,7 @@
 package Programmers;
 
+import java.util.Arrays;
+
 public class level1_5 {
 	
 	public static void main(String[] args) {
@@ -44,9 +46,49 @@ public class level1_5 {
 		answer = sub_answer - money;
 		System.out.println(answer);
 		
+		// 3. 주사위의 개수
 		
- 		
+		int[] box = {10,8,6};
+		int n = 3;
 		
+		int answer3 = 1;
+		
+		for(int i = 0; i < box.length; i++) {
+			answer3 *= box[i] / n; 
+		}
+		
+		System.out.println("답 : " + answer3);
+		
+ 		// 4. 문자열 정렬하기 (1)
+		
+		String my_string = "hi12392";
+		int count4 = 0;
+		String sub_ans = "";
+		int[] result4 = {};
+		for(int i = 0; i < my_string.length(); i++) {
+			if(isParseInt(my_string.charAt(i)) == true) {
+				count4++;
+				sub_ans += my_string.charAt(i);
+			}
+		}
+		
+		result4 = new int[count4];
+		for(int i = 0; i < count4; i++) {
+			result4[i] = Integer.parseInt(sub_ans.split("")[i]);
+		}
+		Arrays.sort(result4);
+		System.out.println("4번 정답 : " + Arrays.toString(result4));
+		
+	}
+	
+	public static boolean isParseInt(char ch) {
+		String str = ""+ch;
+		try {
+			Integer.parseInt(str);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 		
 	}
 
