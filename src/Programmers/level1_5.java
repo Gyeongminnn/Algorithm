@@ -79,6 +79,23 @@ public class level1_5 {
 		Arrays.sort(result4);
 		System.out.println("4번 정답 : " + Arrays.toString(result4));
 		
+		// 5. 예산
+		int[] d = {1,3,2,5,4};
+		int budget = 9;
+		int answer5 =0;
+		Arrays.sort(d);
+		
+		for(int i = 0; i < d.length; i++) {
+			budget -= d[i];
+			if(budget < 0) {
+				break;
+			}
+			answer5++;
+		}
+		
+		
+		
+		System.out.println("답 확인 : " + answer5);
 	}
 	
 	public static boolean isParseInt(char ch) {
