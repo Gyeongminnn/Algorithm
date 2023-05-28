@@ -96,6 +96,19 @@ public class level1_5 {
 		
 		
 		System.out.println("답 확인 : " + answer5);
+		
+		// 6. 문자열 다루기 기본
+		String s = "ㅁ234";
+		String[] sArr = s.split("");
+		boolean answer6 = true;
+		
+		for(int i = 0; i < sArr.length; i++) {
+			if(!sArr[i].matches("[0-9]+")) {
+				answer6 = false;
+				break;
+			}
+		}
+		System.out.println(answer6);
 	}
 	
 	public static boolean isParseInt(char ch) {
