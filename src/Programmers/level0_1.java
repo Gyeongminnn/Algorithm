@@ -1,6 +1,12 @@
 package Programmers;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class level0_1 {
 
@@ -112,8 +118,95 @@ public class level0_1 {
 		
 		System.out.println(answer6);
 		
+		// 7. 문자열을 정수로 변환하기
+		String n_str = "10";
+		int answer7 = Integer.parseInt(n_str);
 		
+		// 8. 최댓값 만들기(2)
 		
+		int[] numbers = {1,2,-3,4,-5};
+		Arrays.sort(numbers);
+		System.out.println(Arrays.toString(numbers));
+		int sub_a = 0, sub_b = 0;
+		int answer8 = 0;
+		for(int i = 0; i < numbers.length; i++) {
+			if(numbers[i] < 0) {
+				sub_a = numbers[0] * numbers[1];
+			}else if(numbers[i] > 0) {
+				answer8 = numbers[numbers.length - 1] * numbers[numbers.length - 2];
+			}
+		}
+		
+		if(sub_a != 0 && sub_a > answer8) {
+			answer8 = sub_a;
+		}
+		System.out.println("8번 정답 : " + answer8);
+		
+		// 9. 컨트롤 제트
+		String s9 = "1 2 Z 3";
+		String[] arr = s9.split(" ");
+		System.out.println("확인 : " + Arrays.toString(arr));
+		int z = 0;
+		int answer9 = 0;
+		for(int i = 0; i < arr.length; i++) {
+			
+			
+			if(!arr[i].equals("Z")) {
+				answer9 += Integer.parseInt(arr[i]);
+			}else {
+				z = i;
+				answer9 -= Integer.parseInt(arr[z -1]);
+			}
+		}
+		
+		System.out.println(answer9);
+		
+		// 10. 배열 회전 시키기
+		
+		int[] nums = {4, 455, 6, 4, -1, 45, 6};
+//		int[] nums = {1,2,3};
+		String direction = "left";
+		
+		int[] answer10 = new int[nums.length];
+		int cnt = 0;
+		if(direction.equals("right")) {
+			System.out.println("right");
+			for(int i = 1; i < nums.length; i++) {
+				answer10[i] = nums[i - 1];
+			}
+			answer10[0] = nums[nums.length - 1];
+		}else if(direction.equals("left")) {
+			System.out.println("left");
+			
+			for(int i = 0; i < nums.length - 1; i++) {
+				System.out.println("for문 실행");
+
+				answer10[i] = nums[i + 1];
+				System.out.println("출력 "  + nums[i + 1]);
+			}
+			answer10[nums.length - 1] = nums[0];
+		}
+		
+		System.out.println(Arrays.toString(answer10));
+		
+		// 11. 중복된 문자 제거
+		String st = "people";
+		String[] array = st.split("");
+		LinkedHashSet<String> lhset = new LinkedHashSet<>();
+		
+		for(String al : array) lhset.add(al);
+		
+		System.out.println(lhset);
+		
+		String answer11 = "";
+//		System.out.println(lhset.size());
+		Iterator<String> iter = lhset.iterator();
+		
+		while(iter.hasNext()) {
+			answer11 += iter.next();
+		}
+		
+		System.out.println(answer11);
 	}
 
 }
